@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <script src="js/options.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        tr td {
+            padding: 5px 3px;
+        }
+
+        input {
+            padding: 5px;
+        }
+
+        button {
+            border: 0;
+            padding: 5px 10px;
+        }
+
+        button#permissions {
+            background-color: #ff6666;
+        }
+
+        p a {
+            color: black;
+            text-decoration: none;
+        }
+
+        p a:hover {
+            text-decoration: underline;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #23222b;
+                color: white;
+            }
+
+            input {
+                background-color: #484854;
+                color: white;
+                border: 1px solid gray;
+            }
+
+            button {
+                background-color: #484854;
+                color: white;
+                border: 0;
+            }
+
+            button#permissions {
+                background-color: #660000;
+            }
+
+            p a {
+                color: white;
+            }
+
+        }
+    </style>
+    </head>
+    <body style="margin: 10px;">
+        <h1>ClickToCall over HTTP settings</h1>
+        <p>Please enter the URL to the phones servlet.<br>
+        The placeholder {number} will be replaced by the dialed number</p>
+        <table>
+            <tbody>
+                <tr>
+                    <td><label for="url">servlet URL:</label></td>
+                    <td><input type="text" id="url" placeholder="http://192.168.1.55/servlet/?key=number&number={number}" style="width: 400px" /></td>
+                </tr>
+                <tr>
+                    <td><label for="user">telephone username:</label></td>
+                    <td><input type="text" id="user" placeholder="" style="width: 200px" /></td>
+                </tr>
+                <tr>
+                    <td><label for="password">telephone password:</label></td>
+                    <td><input type="password" id="password" placeholder="" style="width: 200px" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><label>do not prompt before calling: <input type="checkbox" id="doNotPrompt" placeholder="" style="margin: 0 5px;" /></label></td>
+                </tr>
+            </tbody>
+        </table>
+        <button id="savebtn" style="margin-top:10px;">save</button>
+        <button id="permissions" style="margin-top:10px;display:none;">save & grant permissions</button>
+        <p style="font-size: 0.8em">&copy; 2024 <a href="https://www.netas.ch" target="_blank">Netas AG</a></p>
+    </body>
+</html>
