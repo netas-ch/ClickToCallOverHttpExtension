@@ -1,8 +1,8 @@
 {
     "name": "ClickToCall over HTTP",
-    "description": "handle tel-protocol links to redirect them to a HTTP-Servlet. e.g. Yealink, Snom and others",
+    "description": "handle tel-protocol links to redirect them to a HTTP-Servlet. e.g. Yealink, snom and others",
     "homepage_url": "https://github.com/netas-ch/ClickToCallOverHttpExtension",
-    "version": "1.1",
+    "version": "1.2",
     "manifest_version": 3,
 
     "action": {

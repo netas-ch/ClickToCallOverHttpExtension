@@ -68,11 +68,15 @@
         <h1>ClickToCall over HTTP settings</h1>
         <p>Please enter the URL to the phones servlet.<br>
         The placeholder {number} will be replaced by the dialed number</p>
+        <p>Example for Yealink:<br>
+        <code>http://192.168.1.55/servlet/?key=number={number}</code></p>
+        <p>Example for snom:<br>
+        <code>http://192.168.1.55/command.htm?number={number}</code></p>
         <table>
             <tbody>
                 <tr>
                     <td><label for="url">servlet URL:</label></td>
-                    <td><input type="text" id="url" placeholder="http://192.168.1.55/servlet/?key=number&number={number}" style="width: 400px" /></td>
+                    <td><input type="text" id="url" placeholder="http://192.168.1.55/servlet/?key=number={number}" style="width: 400px" /></td>
                 </tr>
                 <tr>
                     <td><label for="user">telephone username:</label></td>

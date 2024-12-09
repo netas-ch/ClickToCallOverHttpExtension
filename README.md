@@ -1,6 +1,6 @@
 # «ClickToCall over HTTP» Firefox Extension
 Firefox browser extension to open "tel"-links with a IP-phone which provides a HTTP-API.
-For example Yealink, Snom and others.
+For example Yealink, snom and others.
 
 ## configuration
 Go to about:addons in firefox, click on this extension and choose the "settings" tab. Set URL, username and password of your IP-phone.
