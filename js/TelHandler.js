@@ -1,3 +1,10 @@
+/*
+ * Copyright © 2024 Netas Ltd., Switzerland.
+ * All rights reserved.
+ * @author  Netas AG, support@netas.ch
+ * @date    2024-12-06
+ */
+
 class TelHandler {
 
     constructor() {
@@ -8,10 +15,7 @@ class TelHandler {
             this._nrField = document.getElementById('number');
             this._msgDiv = document.getElementById('messages');
             this._numberEntered = false;
-            this._darkMode = false;
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                this._darkMode = true;
-            }
+            this._darkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
             // icon
             this._addIcon();
@@ -39,7 +43,7 @@ class TelHandler {
             this._nrField.addEventListener('keypress', (e) => { this._onNrFieldKeyPress(e); });
 
             // Settings laden
-            var gettingItem = browser.storage.sync.get();
+            let gettingItem = browser.storage.sync.get();
             gettingItem.then((res) => {
                 // console.log(res);
                 this._settings = res;
@@ -71,7 +75,6 @@ class TelHandler {
     }
 
     _addIcon() {
-        // <link rel="icon" href="icons/ico_light_16.png" type="image/png" />
         let ico = document.createElement('link');
         ico.setAttribute('rel', 'icon');
         ico.setAttribute('href', this._darkMode ? 'icons/ico_dark_16.png' : 'icons/ico_light_16.png');
@@ -80,7 +83,6 @@ class TelHandler {
     }
 
     _makeCall(number, autoCall=false) {
-
         this._http.makeCall(number, !!this._settings.doNotPrompt, this._settings.callingDevice).then((r) => {
 
             this._showMessage('call', 'call started');

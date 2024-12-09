@@ -17,6 +17,10 @@ class Http {
     // PUBLIC
     async requestSystemStatus() {
 
+        if (!this._url) {
+            return new Error('URL of servlet not set. Go to about:addons of your browser to set the url.');
+        }
+
         // URL für Status-Abfrage
         let url = this._url.match(/https?:\/\/[^\/]+/);
 
@@ -37,12 +41,6 @@ class Http {
     // PRIVATE
     _doRequest(url) {
         return new Promise((resolve, reject) => {
-
-            // URL ermitteln
-            let reqUrl = this._url;
-            if (url) {
-                reqUrl = url;
-            }
 
             if (!url) {
                 reject(new Error('URL of servlet not set. Go to about:addons of your browser to set the url.'));
